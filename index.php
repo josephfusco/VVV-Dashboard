@@ -98,15 +98,13 @@ if ( isset( $_GET ) ) {
 include_once 'views/partials/header.php';
 include_once 'views/partials/navbar.php';
 ?>
-	<div class="container-fluid">
+<div class="container">
 
 <?php include_once 'views/partials/sidebar.php' ?>
 
-	<div class="col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 main">
+	<div class="main">
 
 		<?php
-
-		include_once 'views/partials/page-top.php';
 
 		include_once 'views/partials/notices.php';
 

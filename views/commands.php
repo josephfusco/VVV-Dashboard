@@ -22,12 +22,11 @@
 		Install and use <a target="_blank" href="https://github.com/bradp/vv">Variable VVV (newest)</a><br />
 		<a target="_blank" href="https://github.com/bradp/vv#vv-options">VV Options</a><br />
 		<a target="_blank" href="https://github.com/bradp/vv#options-for-site-creation">VV Site Create Options</a>
-
 	</p>
 
 	<h2>Variable VVV Commands</h2>
 
-	<table class="table table-responsive table-bordered table-striped">
+	<table class="table table-responsive table-striped">
 		<thead>
 		<tr>
 			<th>Command</th>

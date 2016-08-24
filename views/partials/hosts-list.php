@@ -25,7 +25,7 @@
 			<span class="badge"><?php echo isset( $hosts['site_count'] ) ? $hosts['site_count'] : ''; ?></span> </span>
 	</div>
 
-	<table class="sites table table-responsive table-striped table-bordered table-hover">
+	<table class="sites table table-responsive table-hover">
 		<thead>
 		<tr>
 			<th>Debug Mode</th>
@@ -104,7 +104,7 @@
 							<a href="./?host=<?php echo $array['host']; ?>&get_plugins=true" class="btn btn-default btn-xs">
 								<i class="fa fa-puzzle-piece"></i><span> Plugins</span>
 							</a>
-							
+
 						<?php }
 
 						if ( $is_env || $has_wp_config ) {
@@ -118,7 +118,7 @@
 
 							<a href="./?host=<?php echo $array['host']; ?>&migrate=true" class="btn btn-warning btn-xs">
 								<i class="fa fa-database"></i><span> Migrate</span></a>
-							
+
 							<?php
 						}
 

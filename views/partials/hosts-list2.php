@@ -28,7 +28,7 @@ $host_info = ( is_array( $host_info ) ) ? $host_info : false;
 			<span class="badge"><?php echo ( $host_info ) ? count( $host_info ) : '0'; ?></span> </span>
 	</div>
 
-	<table class="sites table table-responsive table-striped table-bordered table-hover">
+	<table class="sites table table-responsive table-hover">
 		<thead>
 		<tr>
 			<th>Debug Mode</th>
@@ -66,13 +66,19 @@ $host_info = ( is_array( $host_info ) ) ? $host_info : false;
 							}
 						} ?>
 					</td>
-					<td class="host"><?php
+					<td class="host">
+
+						<?php if ( isset($host['wp_is_installed']) && ($host['wp_is_installed'] == 'true' || $host['wp_is_installed'] == 'false' && $host['is_wp_site'] == 'true' )) { ?>
+							<a href="http://<?php echo $host['domain']; ?>/" target="_blank">
+						<?php } ?>
+
+						<?php
 
 						echo @$host['domain'];
 
 						if ( isset( $host['config_settings']['MULTISITE'] ) ) {
 							echo '<span class="label label-default pull-right sub-site-toggle"><i class="fa fa-server"></i> MS</span>';
-							
+
 							$sub_sites = $host_commands->get_sub_sites($host['hostname'], $host['wp_path']);
 							$sub_sites = json_decode($sub_sites);
 							echo '<div class="sub-sites" style="margin-top: 5px; display: none;">';
@@ -83,7 +89,12 @@ $host_info = ( is_array( $host_info ) ) ? $host_info : false;
 							echo '</div>';
 						}
 
-						?></td>
+						?>
+
+						<?php if ( isset($host['wp_is_installed']) && ($host['wp_is_installed'] == 'true' || $host['wp_is_installed'] == 'false' && $host['is_wp_site'] == 'true' )) { ?>
+							</a>
+						<?php } ?>
+					</td>
 					<td><?php
 						if ( isset( $host['wp_version'] ) ) {
 							echo $host['wp_version'];
@@ -93,10 +104,6 @@ $host_info = ( is_array( $host_info ) ) ? $host_info : false;
 						?></td>
 
 					<td>
-						<?php if ( isset($host['wp_is_installed']) && ($host['wp_is_installed'] == 'true' || $host['wp_is_installed'] == 'false' && $host['is_wp_site'] == 'true' )) { ?>
-							<a class="btn btn-primary btn-xs" href="http://<?php echo $host['domain']; ?>/" target="_blank">
-								<i class="fa fa-external-link"></i> Visit </a>
-						<?php } ?>
 						<?php if ( isset($host['wp_is_installed']) && $host['wp_is_installed'] == 'true' ) { ?>
 							<a class="btn btn-warning btn-xs" href="http://<?php echo $host['domain']; ?>/wp-admin" target="_blank">
 								<i class="fa fa-wordpress"></i> Admin </a>

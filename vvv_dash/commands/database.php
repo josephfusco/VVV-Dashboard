@@ -167,7 +167,7 @@ class database extends host {
 					$m_table_array = array();
 					$close         = '<a class="close" href="./">Close</a>';
 					$m_table       = '<h4>The tables modified for <span class="red">' . $host . '</span> ' . $close . '</h4>';
-					$m_table .= '<table class="table table-bordered table-striped">';
+					$m_table .= '<table class="table">';
 
 					foreach ( $migrate as $key => $row ) {
 
@@ -237,7 +237,7 @@ class database extends host {
 
 		$host   = $_GET['host'];
 		$domain = ( isset( $_GET['domain'] ) ) ? $_GET['domain'] : false;
-		
+
 		$cmd     = 'wp search-replace --url=' . $host . ' ' . $host . ' ' . $domain . ' --path=' . $this->host_info['wp_path'];
 		$migrate = shell_exec( $cmd );
 

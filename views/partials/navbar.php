@@ -15,15 +15,18 @@
  * dashboard
  * navbar.php
  */
+global $branch;
+$branch = shell_exec( 'cd ' . VVV_WEB_ROOT . '/default/dashboard  && git rev-parse --short HEAD && git rev-parse --abbrev-ref HEAD 2>&1' );
 ?>
-	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="navbar navbar-inverse" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
+				<a class="navbar-brand" href="/">VVV Dashboard</a>
+				<small>Version: <?php echo VVV_DASH_VERSION . ', Branch: ' . $branch ?></small>
 				<a href="#menu-toggle" class="btn btn-success btn-xs" id="menu-toggle">Sidebar</a>
-				<a class="navbar-brand" href="./">Dashboard</a>
 			</div>
 			<div class="collapse navbar-collapse">
-				<ul class="nav navbar-nav">
+				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 							VVV Tools
@@ -50,11 +53,6 @@
 						</ul>
 					</li>
 				</ul>
-				<p class="pull-right">
-					<a title="Join the party on Gitter Chat" class="gitter" href="https://gitter.im/topdown/VVV-Dashboard" target="_blank"><i class="fa fa-comments-o  fa-2x fa-inverse"></i></a>
-					<a title="VVV Dashboard on GitHub" class="github-link" href="https://github.com/topdown/VVV-Dashboard" target="_blank"><i class="fa fa-github fa-2x fa-inverse"></i></a>
-					<a title="VVV Dashboard Documentation" class="github-link" href="https://github.com/topdown/VVV-Dashboard/wiki" target="_blank"><i class="fa fa-book  fa-2x fa-inverse"></i></a>
-				</p>
 			</div><!-- /.navbar-collapse -->
 		</div>
 	</div>

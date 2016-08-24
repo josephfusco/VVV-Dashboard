@@ -22,7 +22,7 @@
 	<div class="row">
 		<div class="col-sm-12 hosts">
 			<?php
-			
+
 			// Plugins table
 			$plugin_commands->display();
 
@@ -42,6 +42,6 @@
 		</div>
 	</div>
 
-<?php include_once VVV_DASH_VIEWS . '/partials/php-error-logs.php';
+<?php
 
 // End dashboard.php

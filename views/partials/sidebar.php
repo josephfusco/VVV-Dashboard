@@ -16,7 +16,7 @@
  * sidebar.php
  */
 ?>
-	<div class="col-sm-4 col-md-3 sidebar">
+	<div class="sidebar">
 
 		<p class="sidebar-title">Quick Info</p>
 		<ul class="nav">
@@ -71,6 +71,8 @@
 				<a href="https://github.com/aubreypwd/wordpress-themereview-vvv" target="_blank">VVV WordPress ThemeReview</a>
 			</li>
 		</ul>
+
+		<?php include_once VVV_DASH_VIEWS . '/partials/php-error-logs.php'; ?>
 	</div>
 <?php
 // End sidebar.php

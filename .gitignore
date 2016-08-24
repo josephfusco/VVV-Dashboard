@@ -1,5 +1,7 @@
+node_modules
 *.sass-cache*
 cache/*
+sass/custom.scss
 custom.css
 dumps/*
 notes.txt

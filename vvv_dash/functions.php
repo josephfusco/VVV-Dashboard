@@ -311,7 +311,7 @@ function get_backups_table() {
 		$table .= vvv_dash_notice( $notice );
 	}
 
-	$table .= '<table class="table table-responsive table-striped table-bordered table-hover backups">';
+	$table .= '<table class="table table-responsive table-hover backups">';
 	$table .= '<thead><tr>';
 	$table .= '<th>Host</th>';
 	$table .= '<th>Date <small>( M-D-Y )</small></th>';
